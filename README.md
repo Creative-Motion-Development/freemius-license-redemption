@@ -1,0 +1,1 @@
+# freemius-license-redemption
