@@ -75,7 +75,7 @@ class Plugin {
 
 		$license_key = empty( $_POST['code'] ) ? '' : $this->sanitize( $_POST['code'] );
 		if ( empty( $license_key ) ) {
-			wp_send_json_error( 'Invalid AppSumo code. Please try again.' );
+			wp_send_json_error( 'Invalid License code. Please try again.' );
 		}
 
 		$firstname = $this->sanitize( $_POST['firstname'] );

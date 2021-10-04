@@ -23,16 +23,16 @@ use Exception;
 
     require_once(dirname(__FILE__) . '/FreemiusBase.php');
 
-    define('FS_SDK__USER_AGENT', 'fs-php-' . Freemius_Api_Base::VERSION);
+    define('WFLR_FS_SDK__USER_AGENT', 'fs-php-' . Freemius_Api_Base::VERSION);
 
     $curl_version = curl_version();
 
-    define('FS_API__PROTOCOL', version_compare($curl_version['version'], '7.37', '>=') ? 'https' : 'http');
+    define('WFLR_FS_API__PROTOCOL', version_compare($curl_version['version'], '7.37', '>=') ? 'https' : 'http');
 
     if ( ! defined('WFLR_FS_API__ADDRESS'))
-        define('WFLR_FS_API__ADDRESS', FS_API__PROTOCOL . '://api.freemius.com');
-    if ( ! defined('FS_API__SANDBOX_ADDRESS'))
-        define('FS_API__SANDBOX_ADDRESS', FS_API__PROTOCOL . '://sandbox-api.freemius.com');
+        define('WFLR_FS_API__ADDRESS', WFLR_FS_API__PROTOCOL . '://api.freemius.com');
+    if ( ! defined('WFLR_FS_API__SANDBOX_ADDRESS'))
+        define('WFLR_FS_API__SANDBOX_ADDRESS', WFLR_FS_API__PROTOCOL . '://sandbox-api.freemius.com');
 
     if ( class_exists( 'WFLR\Freemius_Api' ) ) {
         return;
@@ -47,7 +47,7 @@ use Exception;
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => 60,
-            CURLOPT_USERAGENT      => FS_SDK__USER_AGENT,
+            CURLOPT_USERAGENT      => WFLR_FS_SDK__USER_AGENT,
             CURLOPT_HTTPHEADER     => array()
         );
 
@@ -69,7 +69,7 @@ use Exception;
 
         public function GetUrl($pCanonizedPath = '')
         {
-            return ($this->_sandbox ? FS_API__SANDBOX_ADDRESS : WFLR_FS_API__ADDRESS) . $pCanonizedPath;
+            return ($this->_sandbox ? WFLR_FS_API__SANDBOX_ADDRESS : WFLR_FS_API__ADDRESS) . $pCanonizedPath;
         }
 
         /**

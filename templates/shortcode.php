@@ -16,9 +16,9 @@ $plugin_id = $args['plugin_id'] ?? 0;
         <p>The license key was successfully redeemed.</p>
     </div>
     <div class="wflr-form">
-        <p>Please fill up the details below to redeem your AppSumo Code.</p>
+        <p>Please fill up the details below to redeem your Code.</p>
         <form name="wflr_form" id="wflr_form">
-            <label>AppSumo Code <span class="field-required">*</span>
+            <label>License Code <span class="field-required">*</span>
                 <input type="text" name="wflr_code"
                        placeholder="Enter redemption code here"
                        required/></label>

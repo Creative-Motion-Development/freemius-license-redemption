@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Freemius License Redemption
  * Description: Freemius License Redemption
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      creativemotion
  * Author URI:  https://cm-wp.com
  * Text Domain: freemius-license-redemption

@@ -1,6 +1,6 @@
 # Freemius License Redemption widget plugin
 
-A complete redemption widget for AppSumo Codes for Freemius.
+A complete redemption widget for License Codes for Freemius.
 
 ![screenshot](https://github.com/Creative-Motion-Development/freemius-license-redemption/blob/master/screenshot.jpg?raw=true)
 

@@ -17,14 +17,14 @@ namespace WFLR;
 	 * under the License.
 	 */
 
-	if ( ! defined( 'FS_API__VERSION' ) ) {
-		define( 'FS_API__VERSION', '1' );
+	if ( ! defined( 'WFLR_FS_API__VERSION' ) ) {
+		define( 'WFLR_FS_API__VERSION', '1' );
 	}
-	if ( ! defined( 'FS_SDK__PATH' ) ) {
-		define( 'FS_SDK__PATH', dirname( __FILE__ ) );
+	if ( ! defined( 'WFLR_FS_SDK__PATH' ) ) {
+		define( 'WFLR_FS_SDK__PATH', dirname( __FILE__ ) );
 	}
-	if ( ! defined( 'FS_SDK__EXCEPTIONS_PATH' ) ) {
-		define( 'FS_SDK__EXCEPTIONS_PATH', FS_SDK__PATH . '/Exceptions/' );
+	if ( ! defined( 'WFLR_FS_SDK__EXCEPTIONS_PATH' ) ) {
+		define( 'WFLR_FS_SDK__EXCEPTIONS_PATH', WFLR_FS_SDK__PATH . '/Exceptions/' );
 	}
 
 	if ( ! function_exists( 'json_decode' ) ) {
@@ -42,7 +42,7 @@ namespace WFLR;
 
 	if ( ! class_exists( 'WFLR\Freemius_Exception' )) {
 		foreach ($exceptions as $e)
-			require FS_SDK__EXCEPTIONS_PATH . $e . '.php';
+			require WFLR_FS_SDK__EXCEPTIONS_PATH . $e . '.php';
 	}
 
     if ( class_exists( 'WFLR\Freemius_Api_Base' ) ) {
@@ -121,7 +121,7 @@ namespace WFLR;
 					throw new Freemius_Exception('Scope not implemented.');
 			}
 
-			return '/v' . FS_API__VERSION . $base .
+			return '/v' . WFLR_FS_API__VERSION . $base .
 			       (!empty($pPath) ? '/' : '') . $pPath .
 			       ((false === strpos($pPath, '.')) ? '.' . self::FORMAT : '') . $query;
 		}
@@ -161,7 +161,7 @@ namespace WFLR;
 		 */
 		public function Test()
 		{
-			$pong = $this->_Api('/v' . FS_API__VERSION . '/ping.json');
+			$pong = $this->_Api('/v' . WFLR_FS_API__VERSION . '/ping.json');
 
 			return (is_object($pong) && isset($pong->api) && 'pong' === $pong->api);
 		}
@@ -175,7 +175,7 @@ namespace WFLR;
 		public function FindClockDiff()
 		{
 			$time = time();
-			$pong = $this->_Api('/v' . FS_API__VERSION . '/ping.json');
+			$pong = $this->_Api('/v' . WFLR_FS_API__VERSION . '/ping.json');
 			return ($time - strtotime($pong->timestamp));
 		}
 
